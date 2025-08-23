@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary-50: #f0fdf4;
+    --color-primary-100: #dcfce7;
+    --color-primary-200: #bbf7d0;
+    --color-primary-300: #86efac;
+    --color-primary-400: #4ade80;
+    --color-primary-500: #22c55e;
+    --color-primary-600: #16a34a;
+    --color-primary-700: #15803d;
+    --color-primary-800: #166534;
+    --color-primary-900: #14532d;
+
+    --color-secondary-50: #fefce8;
+    --color-secondary-100: #fef9c3;
+    --color-secondary-200: #fef08a;
+    --color-secondary-300: #fde047;
+    --color-secondary-400: #facc15;
+    --color-secondary-500: #eab308;
+    --color-secondary-600: #ca8a04;
+    --color-secondary-700: #a16207;
+    --color-secondary-800: #804a06;
+    --color-secondary-900: #663c05;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50;
+  }
+}
+
+@layer utilities {
+     .line-clamp-1 {
+        @apply overflow-hidden text-ellipsis whitespace-nowrap;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
