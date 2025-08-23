@@ -1,5 +1,13 @@
-# Vue 3 + TypeScript + Vite
+# Recipe Book App
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A simple and modern **Recipe Book App** built using:
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+- [Vue 3](https://vuejs.org/) with Composition API & `<script setup lang="ts">`
+- [TypeScript](https://www.typescriptlang.org/) for type safety
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
+- [Vite](https://vitejs.dev/) for fast development and build
+
+## 📦 Project Setup
+
+```bash
+npm install
