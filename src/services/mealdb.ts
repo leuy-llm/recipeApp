@@ -1,6 +1,6 @@
 import type { Recipe, MealDBResponse, MealDBMeal, Ingredient } from '../types/recipe';
 
-const BASE_URL = 'https://www.themealdb.com/api/json/v1/1';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export class MealDBService {
   static async searchMeals(query: string = ''): Promise<Recipe[]> {
