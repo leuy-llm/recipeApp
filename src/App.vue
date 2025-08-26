@@ -71,12 +71,7 @@
         </div>
 
       <!-- Recipe Grid/List -->
-      <div 
-        v-if="!loading"
-        :class="viewMode === 'grid' 
-          ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' 
-          : 'space-y-4'"
-      >
+      <div v-if="!loading" :class="viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6'">
         <div v-if="filteredRecipes.length === 0" class="col-span-full text-center py-12">
           <div class="text-gray-400 mb-4">
             <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,17 +83,18 @@
         </div>
         
         <RecipeCard
-          v-for="recipe in filteredRecipes"
-          :key="recipe.id"
-          :recipe="recipe"
-          @view-recipe="viewRecipe"
-        />
+            v-for="recipe in filteredRecipes"
+            :key="recipe.id"
+            :recipe="recipe"
+            :viewMode="viewMode"
+            @view-recipe="viewRecipe"
+            />
+
       </div>
     </main>
 
     <!-- Recipe Detail Modal -->
-    <div
-      v-if="selectedRecipe"
+    <div v-if="selectedRecipe"
       class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
       @click.self="selectedRecipe = null"
     >
@@ -109,7 +105,9 @@
         />
       </div>
     </div>
+
   </div>
+    <Footer />
 </template>
 
 <script setup lang="ts">
@@ -118,6 +116,7 @@ import { PlusIcon, Squares2X2Icon, ListBulletIcon } from '@heroicons/vue/24/outl
 import RecipeCard from './components/RecipeCard.vue';
 import RecipeDetail from './components/RecipeDetail.vue';
 import SearchFilter from './components/SearchFilter.vue';
+import Footer from './components/Footer.vue';
 import type { Recipe, RecipeFilters } from './types/recipe';
 import { MealDBService } from './services/mealdb';
 

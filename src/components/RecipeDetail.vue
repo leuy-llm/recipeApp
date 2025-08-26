@@ -81,8 +81,7 @@
           <span 
             v-for="tag in recipe.tags" 
             :key="tag"
-            class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium"
-          >
+            class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">
             #{{ tag }}
           </span>
         </div>
